@@ -25,3 +25,4 @@ items.forEach((item, i) => {
   item.clicked = false;
   item.addEventListener('click', () => expand(item, i));
 });
+<script src='https://unpkg.co/gsap@3/dist/gsap.min.js'></script><script  src="./script.js"></script>
