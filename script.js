@@ -24,8 +24,8 @@ function genQrCode() {
 
 
   //TODO - Show Error on empty Box.
-  console.log(nombre, apellido, clasesparaadultos);
-  var str = "NOMBRE:" + nombre + "APELLIDO:" + apellido + "\nCLASES PARA ADULTOS:" + clasesparaadultos;
+  console.log(nombre, apellido, clasesparaadultos, edad3a5, edad6a8, edad9a13, edad14a17, edad18a21, edad26mas, clasesparaadultos, clasesparaninos, clasesdefreestyleslalom, clasesenescuelas, clasesparticulares, eventos, campamentosdeverano, telefono, correo);
+  var str = "NOMBRE:" + nombre + "APELLIDO:" + apellido + "\nCLASES PARA ADULTOS:" + clasesparaadultos + clasesparaninos + clasesdefreestyleslalom + clasesenescuelas + clasesparticulares + eventos + campamentosdeverano + telefono + correo;
   $("#reemplazarn").text(nombre);
   $("#reemplazara").text(apellido);
   $("#reemplazarcpa").text(clasesparaadultos);
