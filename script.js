@@ -32,8 +32,8 @@ function genQrCode() {
   $("#box1").html("");
   var qrcode = new QRCode("box1", {
     text: str, 
-    width: 100,
-    height: 100,
+    width: 256,
+    height: 256,
     colorDark : "#000000",
     colorLight : "#ffffff",
     correctLevel : QRCode.CorrectLevel.H
