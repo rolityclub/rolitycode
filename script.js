@@ -32,8 +32,8 @@ function genQrCode() {
   $("#box1").html("");
   var qrcode = new QRCode("box1", {
     text: str, 
-    width: 256,
-    height: 256,
+    width: 100,
+    height: 100,
     colorDark : "#000000",
     colorLight : "#ffffff",
     correctLevel : QRCode.CorrectLevel.H
@@ -47,7 +47,6 @@ $("#DownloadQrImage").click(function () {
 function DownloadQrImage() {
   html2canvas($("#A4Page"), {
       letterRendering: 1,
-	  scale : 2,
 	  dpi : 300,
       allowTaint : false,
   		onrendered: function (canvas) {
