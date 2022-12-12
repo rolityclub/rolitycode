@@ -4,9 +4,23 @@ $("#generateButton").click(function () {
 
 //var l = {}; location.search.slice(1).split("&").map(function(v){var x = v.split("="); l[x[0]] = x[1]; });
 function genQrCode() {
-	var nombre = document.getElementById('nombre').value;
-	var apellido = document.getElementById('apellido').value;
-	var clasesparaadultos = document.getElementById('clasesparaadultos').checked;
+      var nombre = document.getElementById('nombre').value;
+      var apellido = document.getElementById('apellido').value;
+      var edad3a5 = document.getElementById('edad3a5').checked;
+      var edad6a8 = document.getElementById('edad6a8').checked;
+      var edad9a13 = document.getElementById('edad9a13').checked;
+      var edad14a17 = document.getElementById('edad14a17').checked;
+      var edad18a21 = document.getElementById('edad18a21').checked;
+      var edad26mas = document.getElementById('edad26mas').checked;
+      var clasesparaadultos = document.getElementById('clasesparaadultos').checked;
+      var clasesparaninos = document.getElementById('clasesparaninos').checked;
+      var clasesdefreestyleslalom = document.getElementById('clasesdefreestyleslalom').checked;
+      var clasesenescuelas = document.getElementById('clasesenescuelas').checked;
+      var clasesparticulares = document.getElementById('clasesparticulares').checked;
+      var eventos = document.getElementById('eventos').checked;
+      var campamentosdeverano = document.getElementById('campamentosdeverano').checked;
+      var telefono = document.getElementById('telefono').value;
+      var correo = document.getElementById('correo').value;
 
 
   //TODO - Show Error on empty Box.
