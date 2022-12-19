@@ -49,7 +49,6 @@ function DownloadQrImage() {
       letterRendering: 1,
 	  dpi : 300,
       allowTaint : false,
-	  width: 1000,
   		onrendered: function (canvas) {
         //document.body.appendChild(canvas)
   			canvas.toBlob(function (blob) {
