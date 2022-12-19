@@ -29,6 +29,7 @@ function genQrCode() {
   $("#reemplazarn").text(nombre);
   $("#reemplazara").text(apellido);
   $("#reemplazarcpa").text(clasesparaadultos);
+  $("#reemplazarcpN").text(clasesparaninos);
   $("#box1").html("");
   var qrcode = new QRCode("box1", {
     text: str, 
