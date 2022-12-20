@@ -6,7 +6,7 @@ $("#generateButton").click(function () {
 function genQrCode() {
       var nombre = document.getElementById('nombre').value;
       var apellido = document.getElementById('apellido').value;
-      var edad3a5 = document.getElementById('edad3a5').checked;
+      var edad3a5 = document.getElementById('edad3a5').value;
       var edad6a8 = document.getElementById('edad6a8').checked;
       var edad9a13 = document.getElementById('edad9a13').checked;
       var edad14a17 = document.getElementById('edad14a17').checked;
