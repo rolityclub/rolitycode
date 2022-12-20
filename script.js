@@ -12,7 +12,7 @@ function genQrCode() {
       var edad14a17 = document.getElementById('edad14a17').checked;
       var edad18a21 = document.getElementById('edad18a21').checked;
       var edad26mas = document.getElementById('edad26mas').checked;
-      var clasesparaadultos = document.getElementById('clasesparaadultos').checked = "si";
+      var clasesparaadultos = document.getElementById('clasesparaadultos').value;
       var clasesparaninos = document.getElementById('clasesparaninos').checked;
       var clasesdefreestyleslalom = document.getElementById('clasesdefreestyleslalom').checked;
       var clasesenescuelas = document.getElementById('clasesenescuelas').checked;
