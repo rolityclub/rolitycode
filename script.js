@@ -1,43 +1,204 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$('#adultos').text($('#clasesparaadultos').val());
+
+$("#clasesparaadultos").on('change', function() {
+  if ($(this).is(':checked')) {
+    $(this).attr('value', 'CLASES PARA ADULTOS');
+  } else {
+    $(this).attr('value', 'NINGUNA CLASE SELECCIONADA');
+  }
+  
+  $('#adultos').text($('#clasesparaadultos').val());
+});
+
+$('#ninos').text($('#clasesparaadultos').val());
+
+$("#clasesparaninos").on('change', function() {
+  if ($(this).is(':checked')) {
+    $(this).attr('value', 'CLASES PARA PEQUES');
+  } else {
+    $(this).attr('value', 'NINGUNA CLASE SELECCIONADA');
+  }
+  
+  $('#ninos').text($('#clasesparaninos').val());
+});
+
+$("#clasesdefreestylesalom").on('change', function() {
+	if ($(this).is(':checked')) {
+	  $(this).attr('value', 'CLASES DE FREESTYLE');
+	} else {
+	  $(this).attr('value', 'NINGUNA CLASE SELECCIONADA');
+	}
+	
+	$('#freestyle').text($('#clasesdefreestylesalom').val());
+  });
+
+  $("#clasesenescuelas").on('change', function() {
+	if ($(this).is(':checked')) {
+	  $(this).attr('value', 'CLASES EN ESCUELAS');
+	} else {
+	  $(this).attr('value', 'NINGUNA CLASE SELECCIONADA');
+	}
+	
+	$('#escuelas').text($('#clasesenescuelas').val());
+  });
+
+
+
+$(function () {
+	$("#clasesparaadultos").click(function () {
+		if ($(this).is(":checked")) {
+			$("#adultos").show();
+			$("#ninos").hide();
+			$("#freestyle").hide();
+			$("#escuelas").hide();
+		} else {
+			$("#").hide();
+		}
+	});
+});
+$(function () {
+	$("#clasesparaninos").click(function () {
+		if ($(this).is(":checked")) {
+			$("#ninos").show();
+			$("#adultos").hide();
+			$("#freestyle").hide();
+			$("#escuelas").hide();
+		} else {
+			$("#").hide();
+		}
+	});
+});
+$(function () {
+	$("#clasesdefreestylesalom").click(function () {
+		if ($(this).is(":checked")) {
+			$("#freestyle").show();
+			$("#adultos").hide();
+			$("#ninos").hide();
+			$("#escuelas").hide();
+		} else {
+			$("#").hide();
+		}
+	});
+});
+$(function () {
+	$("#clasesenescuelas").click(function () {
+		if ($(this).is(":checked")) {
+			$("#escuelas").show();
+			$("#adultos").hide();
+			$("#ninos").hide();
+			$("#freestyle").hide();
+		} else {
+			$("#").hide(); 
+		}
+	});
+});
+
+
+
+
+function addClassCheck(element){
+
+    if(element.checked){
+        element.classList.add("marked");
+    }else{
+        element.classList.remove("marked");
+    }
+
+    if(document.getElementsByClassName("marked").length>1){
+		var p = document.getElementById("paragraph");
+  p.style.display = "block"; 
+        element.checked=false;
+        element.classList.remove("marked");
+    }
+
+}
+
+
+
+
+
+
+
+
+
+$('input[type="checkbox"]').change(function(){
+	console.log($(this).is(':checked'));
+	if($(this).is(':checked')){
+	  $(this).siblings('input[type="checkbox"]').attr('checked', false);
+	  var p = document.getElementById("paragraph");
+			p.style.display = "none"; 
+	} else {
+		}
+  });
+
+
+
+
+
+
 $("#generateButton").click(function () {
   genQrCode()
 });
 
 //var l = {}; location.search.slice(1).split("&").map(function(v){var x = v.split("="); l[x[0]] = x[1]; });
 function genQrCode() {
-      var nombre = document.getElementById('nombre').value;
-      var apellido = document.getElementById('apellido').value;
-      var edad3a5 = document.getElementById('edad3a5').checked;
-      var edad6a8 = document.getElementById('edad6a8').checked;
-      var edad9a13 = document.getElementById('edad9a13').checked;
-      var edad14a17 = document.getElementById('edad14a17').checked;
-      var edad18a21 = document.getElementById('edad18a21').checked;
-      var edad26mas = document.getElementById('edad26mas').checked;
-      var clasesparaadultos = document.getElementById('clasesparaadultos').checked;
-      var clasesparaninos = document.getElementById('clasesparaninos').checked;
-      var clasesdefreestyleslalom = document.getElementById('clasesdefreestyleslalom').checked;
-      var clasesenescuelas = document.getElementById('clasesenescuelas').checked;
-      var clasesparticulares = document.getElementById('clasesparticulares').checked;
-      var eventos = document.getElementById('eventos').checked;
-      var campamentosdeverano = document.getElementById('campamentosdeverano').checked;
-      var telefono = document.getElementById('telefono').value;
-      var correo = document.getElementById('correo').value;
+	var nombre = document.getElementById('nombre').value;
+	var apellido = document.getElementById('apellido').value;
+	var email = document.getElementById('email').value;
+	var edad = document.getElementById('edad').value + " año/s";
+	var clasesparaadultos = document.getElementById('clasesparaadultos').value;
+	var clasesparaninos = document.getElementById('clasesparaninos').value;
+	var clasesdefreestylesalom = document.getElementById('clasesdefreestylesalom').value;
+	var clasesenescuelas = document.getElementById('clasesenescuelas').value;
+
 
 
   //TODO - Show Error on empty Box.
-  console.log(nombre, apellido, clasesparaadultos, edad3a5, edad6a8, edad9a13, edad14a17, edad18a21, edad26mas, clasesparaadultos, clasesparaninos, clasesdefreestyleslalom, clasesenescuelas, clasesparticulares, eventos, campamentosdeverano, telefono, correo);
-  var str = "NOMBRE:" + nombre + "APELLIDO:" + apellido + "\nCLASES PARA ADULTOS:" + clasesparaadultos + clasesparaninos + clasesdefreestyleslalom + clasesenescuelas + clasesparticulares + eventos + campamentosdeverano + telefono + correo;
+  console.log(nombre, apellido, email, edad, clasesparaadultos, clasesparaninos, clasesdefreestylesalom, clasesenescuelas);
+  var str = "NOMBRE: " + nombre + "\nAPELLIDO: " + apellido + "\nEMAIL:" + email + "\nEDAD: " + edad + "\n" + clasesparaadultos + "\n" + clasesparaninos + "\n" + clasesdefreestylesalom + "\n" + clasesenescuelas;
   $("#reemplazarn").text(nombre);
   $("#reemplazara").text(apellido);
+  $("#reemplazaredad").text(edad);
   $("#reemplazarcpa").text(clasesparaadultos);
-  $("#reemplazarcpN").text(clasesparaninos);
   $("#box1").html("");
   var qrcode = new QRCode("box1", {
     text: str, 
-    width: 256,
-    height: 256,
-    colorDark : "#000000",
+    width: 500,
+    height: 500,
+    colorDark : "#4267b2",
+	image: "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
     colorLight : "#ffffff",
-    correctLevel : QRCode.CorrectLevel.H
+    correctLevel : QRCode.CorrectLevel.H,
+	
   });
 }
 
@@ -512,8 +673,8 @@ var QRCode;
 	
 	QRCode = function (el, vOption) {
 		this._htOption = {
-			width : 256, 
-			height : 256,
+			width : 500, 
+			height : 500,
 			typeNumber : 4,
 			colorDark : "#000000",
 			colorLight : "#ffffff",
